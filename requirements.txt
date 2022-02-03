@@ -1,3 +1,5 @@
 ptvsd==4.2.10
 fastapi==0.73.0
 uvicorn==0.17.1
+sqlalchemy==1.4.31
+mysql-connector-python==8.0.28

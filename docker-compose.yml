@@ -5,29 +5,27 @@ services:
     container_name: docker-python-app
     restart: always
     build: .
-    links:
-      - db
     env_file:
       - '.env'
     ports:
       - '8000:8000'
     volumes:
-      - ./:/www
-  adminer:
-    restart: always
-    image: adminer
-    container_name: docker-python-adminer
-    ports:
-      - 8008:8080
-  db:
-    container_name: docker-python-db
-    restart: always
-    image: mysql:5.7
-    ports:
-      - "32000:3306"
-    environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_USER: insta_admin
-      MYSQL_PASSWORD: insta2018
-      MYSQL_DATABASE: insta_db
+      - ./app:/app
+  # adminer:
+  #   restart: always
+  #   image: adminer
+  #   container_name: docker-python-adminer
+  #   ports:
+  #     - 8008:8080
+  # db:
+  #   container_name: docker-python-db
+  #   restart: always
+  #   image: mysql:5.7
+  #   ports:
+  #     - "32000:3306"
+  #   environment:
+  #     MYSQL_ROOT_PASSWORD: root
+  #     MYSQL_USER: irroba
+  #     MYSQL_PASSWORD: irroba
+  #     MYSQL_DATABASE: abc123456*
 
